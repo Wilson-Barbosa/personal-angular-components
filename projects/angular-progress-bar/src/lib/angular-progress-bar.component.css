@@ -1,9 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .default-style {
     display: flex;
     flex-direction: row;
@@ -12,12 +6,12 @@
 
 .default-completed {
     background-color: #07ad07;
-    width: 0%;
+    width: 20%;
 }
 
 .default-not-completed {
     background-color: #e2e2e2;
-    width: 100%;
+    width: 80%;
 }
 
 .animation {

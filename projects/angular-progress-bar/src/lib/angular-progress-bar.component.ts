@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 
 @Component({
     selector: 'lib-angular-progress-bar',
@@ -15,13 +15,13 @@ export class AngularProgressBarComponent implements OnInit, OnChanges, AfterView
      * Number that represents the completed amount. Speaking in fractions, this would be the denominator.
      * Default value is 1.
      */
-    @Input() total: number = 1;
+    @Input() total: number = 100;
 
     /**
      * Number that represents the not completed amount. Speaking in fractions this would be numerator.
      * Default value is 0
      */
-    @Input() current: number = 0;
+    @Input() current: number = 10;
 
     /**
      * Optional property that enables an animation, similiar to the ones displayed on
@@ -51,6 +51,8 @@ export class AngularProgressBarComponent implements OnInit, OnChanges, AfterView
     @ViewChild("completedBar") completedBar!: ElementRef;
     @ViewChild("notCompletedBar") notCompletedBar!: ElementRef;
 
+    @Output()
+
     ngOnInit(): void {
 
     }
@@ -65,14 +67,12 @@ export class AngularProgressBarComponent implements OnInit, OnChanges, AfterView
             this.notCompletedBar.nativeElement.style.backgroundColor = this.parseHexColor(this.notCompletedColor);
         }
 
+        this.changeBarWidth(this.total, this.current);
     }
 
     ngOnChanges(changes: SimpleChanges): void {
 
     }
-
-
-
 
     private isValidHex(input: string): boolean {
         return true;
@@ -82,17 +82,9 @@ export class AngularProgressBarComponent implements OnInit, OnChanges, AfterView
         return this.hexRegExp.exec(color)?.toString();
     }
 
-    // private isValidRgb(input: string): boolean {
-    //     return false;
-    // }
-
-    // private isValidColor(input: string): boolean {
-    //     return (this.isValidHex(input) && this.isValidRgb(input));
-    // }
-
-    private changeBarWidth(): void {
+    private changeBarWidth(total: number, current: number): void {
         // calculate the current/total and transforms it to a percentage
-        let currentPercetage: number = Number.parseFloat((100*this.current/this.total).toFixed(2));
+        let currentPercetage: number = Number.parseFloat((100*current/total).toFixed(2));
 
         // then apply the width based on the formula: completedBarWidth = current% and notCompletedBarWidth = 100 - current%
         this.completedBar.nativeElement.style.width = `${currentPercetage}%`;
