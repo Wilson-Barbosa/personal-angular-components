@@ -15,6 +15,8 @@ To generate a lib use at the root : `ng generate application app-name`
 
 To generate an app for testing use: `ng generate library library-name`
 
+To generate a component inside a lib: `ng generate component path --project=library-name`
+
 Official documentation about libraries can be found at: [Creating Libraries in Angular](https://angular.dev/tools/libraries/creating-libraries)
 
 ## Current components

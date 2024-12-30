@@ -1,11 +1,12 @@
 {
-  "name": "custom-editor",
+  "name": "editor",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^19.0.0",
     "@angular/core": "^19.0.0"
   },
   "dependencies": {
+    "editor": "file:",
     "tslib": "^2.3.0"
   },
   "sideEffects": false

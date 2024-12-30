@@ -1,0 +1,17 @@
+#text-box {
+    width: 100%;
+    padding: 1rem;
+
+    box-sizing: border-box;
+    resize: vertical;
+
+    border: 1px solid black;
+    border-top: 0;
+}
+
+.test-container {
+    margin-top: 2rem;
+    border: 1px solid black;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}

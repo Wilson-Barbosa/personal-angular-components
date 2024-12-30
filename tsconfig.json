@@ -7,8 +7,8 @@
       "angular-progress-bar": [
         "./dist/angular-progress-bar"
       ],
-      "custom-editor": [
-        "./dist/custom-editor"
+      "editor": [
+        "./dist/editor"
       ]
     },
     "outDir": "./dist/out-tsc",

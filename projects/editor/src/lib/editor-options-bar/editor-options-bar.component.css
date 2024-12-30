@@ -1,0 +1,22 @@
+.bar {
+    display: flex;
+    flex-direction: row;
+    gap: 0.7rem;
+
+    border: 1px solid black;
+    padding: 0.35rem;
+    padding-left: 1rem;
+}
+
+.bi {
+    padding: 0.5rem;
+}
+
+.bi:hover {
+    cursor: pointer;
+    /* background-color: rgb(214, 214, 214); */
+}
+
+.selected {
+    background-color: red;
+}
